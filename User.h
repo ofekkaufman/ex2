@@ -1,20 +1,41 @@
 ﻿#pragma once
 #include <string>
-#include "DevicesList.h"
+#include <vector>
+#include "Devices.h"
+
+using std::vector;
 
 class User {
 private:
-    unsigned long long id;
+    int id;
     std::string username;
     int age;
-    DevicesList devices;
+    vector<Devices> devices; // רשימת המכשירים של המשתמש
 
 public:
-    void init(unsigned long long id, const std::string& username, int age);
-    unsigned long long getID() const;
-    std::string getUserName() const;
-    int getAge() const;
-    void addDevice(const Devices& device);
-    bool checkIfDevicesAreOn() const;
-    void clear();
+    User(int id, const std::string& username, int age)
+        : id(id), username(username), age(age) {
+    }
+
+    int getID() const { return id; }
+    std::string getUserName() const { return username; }
+    int getAge() const { return age; }
+
+    void addDevice(const Devices& device) { devices.push_back(device); }
+
+    bool checkIfDevicesAreOn() const {
+        for (const auto& d : devices)
+            if (!d.isActive()) return false;
+        return true;
+    }
+
+    vector<Devices> getDevices() const { return devices; }
+
+    vector<Devices> getWindowsDevices() const {
+        vector<Devices> windowsDevices;
+        for (const auto& d : devices)
+            if (d.getOS() == "Windows")
+                windowsDevices.push_back(d);
+        return windowsDevices;
+    }
 };

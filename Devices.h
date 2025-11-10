@@ -2,20 +2,21 @@
 #include <string>
 
 enum DeviceType { PC, LAPTOP, TABLET, PHONE };
-enum OS { WINDOWS7, WINDOWS10, WINDOWS11, UbuntuOS, RedHatOS, MacOS, ANDROID, IOS };
 
 class Devices {
 private:
-    unsigned int id;
+    int id;
     DeviceType type;
-    OS os;
+    std::string os;
     bool active;
 
 public:
-    void init(unsigned int id, DeviceType type, OS os);
-    unsigned int getID() const;
-    DeviceType getType() const;
-    std::string getOS() const;
-    bool isActive() const;
-    void setActive(bool value);
+    Devices(int id, DeviceType type, const std::string& os, bool active)
+        : id(id), type(type), os(os), active(active) {
+    }
+
+    int getID() const { return id; }
+    DeviceType getType() const { return type; }
+    std::string getOS() const { return os; }
+    bool isActive() const { return active; }
 };
