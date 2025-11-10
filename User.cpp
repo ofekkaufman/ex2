@@ -1,57 +1,62 @@
 ﻿#include "User.h"
 
-// אתחול משתמש חדש
+// אתחול המשתמש
 void User::init(unsigned int id, const std::string& username, unsigned int age)
 {
-    m_id = id;
-    m_username = username;
-    m_age = age;
-    m_devices.clear(); // מאתחל רשימת מכשירים ריקה
+    this->id = id;
+    this->username = username;
+    this->age = age;
+    devices.clear(); // איפוס רשימת המכשירים
 }
 
-// ניקוי אובייקט
+// ניקוי המשתמש
 void User::clear()
 {
-    m_id = 0;
-    m_username = "";
-    m_age = 0;
-    m_devices.clear(); // מנקה את רשימת המכשירים
+    devices.clear();
+    id = 0;
+    username = "";
+    age = 0;
 }
 
-// גטרים
+// גישה לשדות
 unsigned int User::getID() const
 {
-    return m_id;
+    return id;
 }
 
 std::string User::getUserName() const
 {
-    return m_username;
+    return username;
 }
 
 unsigned int User::getAge() const
 {
-    return m_age;
+    return age;
 }
 
-// רשימת מכשירים
+// גישה לרשימת המכשירים
 DeviceList& User::getDevices()
 {
-    return m_devices; // מחזיר reference כדי לשנות את הרשימה ישירות
+    return devices;
+}
+
+const DeviceList& User::getDevices() const
+{
+    return devices;
 }
 
 // הוספת מכשיר לרשימה
-void User::addDevice(const Device& newDevice)
+void User::addDevice(const Devices& newDevice)
 {
-    m_devices.add(newDevice); // שימוש ב־DeviceList
+    devices.add(newDevice);
 }
 
-// בדיקה אם כל המכשירים פעילים
+// בדיקה אם כל המכשירים פועלים
 bool User::checkIfDevicesAreOn() const
 {
-    for (unsigned int i = 0; i < m_devices.size(); i++)
+    for (unsigned int i = 0; i < devices.size(); i++)
     {
-        if (!m_devices.get(i).isActive())
+        if (!devices.get(i).isActive()) // כאן נגשים ישירות ל-Devices
             return false;
     }
     return true;

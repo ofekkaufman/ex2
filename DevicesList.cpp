@@ -1,7 +1,7 @@
 ﻿#include "DevicesList.h"
 
 // הוספת מכשיר חדש לסוף הרשימה
-void DeviceList::add(const Device& device)
+void DeviceList::add(const Devices& device)
 {
     DeviceNode* newNode = new DeviceNode(device);
     if (!head) {
@@ -41,7 +41,7 @@ unsigned int DeviceList::size() const
 }
 
 // גישה למכשיר לפי אינדקס
-Device& DeviceList::get(unsigned int index)
+Devices& DeviceList::get(unsigned int index)
 {
     DeviceNode* temp = head;
     unsigned int count = 0;
@@ -54,7 +54,7 @@ Device& DeviceList::get(unsigned int index)
 }
 
 // גישה למכשיר מתוך const
-const Device& DeviceList::get(unsigned int index) const
+const Devices& DeviceList::get(unsigned int index) const
 {
     DeviceNode* temp = head;
     unsigned int count = 0;

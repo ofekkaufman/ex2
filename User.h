@@ -1,27 +1,35 @@
 ﻿#pragma once
 #include <string>
-#include "DevicesList.h"  // כוללים את הרשימה של המכשירים
+#include "Devices.h"
+#include "DevicesList.h"
 
 class User
 {
 private:
-    unsigned int m_id;
-    std::string m_username;
-    unsigned int m_age;
-    DeviceList m_devices;  // רשימת מכשירים של המשתמש
+    unsigned int id;
+    std::string username;
+    unsigned int age;
+    DeviceList devices; // רשימת המכשירים של המשתמש
 
 public:
-    // אתחול ומנקה
+    // אתחול משתמש חדש
     void init(unsigned int id, const std::string& username, unsigned int age);
+
+    // ניקוי המשתמש
     void clear();
 
-    // גטרים
+    // גישה לשדות
     unsigned int getID() const;
     std::string getUserName() const;
     unsigned int getAge() const;
 
-    // מכשירים
-    DeviceList& getDevices();
-    void addDevice(const Device& newDevice);
+    // גישה לרשימת המכשירים
+    DeviceList& getDevices();                   // שימוש רגיל
+    const DeviceList& getDevices() const;       // שימוש עם const
+
+    // הוספת מכשיר לרשימה
+    void addDevice(const Devices& newDevice);
+
+    // בדיקה אם כל המכשירים פועלים
     bool checkIfDevicesAreOn() const;
 };
