@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Device.cpp">
+    <ClCompile Include="Devices.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DeviceList.cpp">
+    <ClCompile Include="DevicesList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProfileList.cpp">
@@ -39,18 +39,24 @@
     <ClCompile Include="UserList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Device.h">
+    <ClInclude Include="Devices.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DeviceList.h">
+    <ClInclude Include="DevicesList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProfileList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

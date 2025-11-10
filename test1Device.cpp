@@ -2,7 +2,7 @@
 #include <windows.h> // WinApi header - needed for setting console color
 #include <random>
 
-#include "Device.h"
+#include "Devices.h"
 
 using std::cout;
 using std::endl;
@@ -15,9 +15,8 @@ using std::endl;
 #define LIGHT_GREEN 10
 #define TEAL 11
 #define RED 12
-#define PURPLE 13
-#define LIGHT_YELLOW 14
-#define WHITE 15
+#define LIGHT_YELLOW 13
+#define WHITE 14
 
 void set_console_color(unsigned int color)
 {
@@ -46,7 +45,7 @@ std::string getDeviceTypeString(const DeviceType type)
     return "Unknown";
 }
 
-std::string getDeviceString(const Device& device)
+std::string getDeviceString(const Devices& device)
 {
     return
         "[ID: " + std::to_string(device.getID()) +
@@ -74,7 +73,7 @@ bool test1Device()
         cout <<
             "Initializing Device1: ... \n" << endl;
 
-        Device device1;
+        Devices device1;
         device1.init(3343, PC, WINDOWS11);
         std::string expected = "[ID: 3343, Type: PC, OS: Windows11, Activated: Yes]";
         std::string got = getDeviceString(device1);

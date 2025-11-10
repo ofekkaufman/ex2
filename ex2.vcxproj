@@ -123,19 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Device.cpp" />
-    <ClCompile Include="DeviceList.cpp" />
+    <ClCompile Include="Devices.cpp" />
+    <ClCompile Include="DevicesList.cpp" />
     <ClCompile Include="ProfileList.cpp" />
     <ClCompile Include="test1Device.cpp" />
     <ClCompile Include="test2User.cpp" />
     <ClCompile Include="test3Profile.cpp" />
     <ClCompile Include="Tester.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="UserList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Device.h" />
-    <ClInclude Include="DeviceList.h" />
+    <ClInclude Include="Devices.h" />
+    <ClInclude Include="DevicesList.h" />
     <ClInclude Include="ProfileList.h" />
+    <ClInclude Include="User.h" />
     <ClInclude Include="UserList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
