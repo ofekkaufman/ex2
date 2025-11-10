@@ -1,67 +1,21 @@
 ﻿#include "DevicesList.h"
+#include <vector>
 
-// הוספת מכשיר חדש לסוף הרשימה
-void DeviceList::add(const Devices& device)
-{
-    DeviceNode* newNode = new DeviceNode(device);
-    if (!head) {
-        head = newNode;
-    }
-    else {
-        DeviceNode* temp = head;
-        while (temp->_next) {
-            temp = temp->_next;
-        }
-        temp->_next = newNode;
-    }
+void DevicesList::init() {
+    devices = nullptr;
+    count = 0;
 }
 
-// ניקוי הרשימה ושחרור זיכרון
-void DeviceList::clear()
-{
-    DeviceNode* current = head;
-    while (current) {
-        DeviceNode* next = current->_next;
-        delete current;
-        current = next;
-    }
-    head = nullptr;
+void DevicesList::add(const Devices& device) {
+    // לפשט: אפשר להמיר ל-vector מאוחר יותר
 }
 
-// חישוב גודל הרשימה
-unsigned int DeviceList::size() const
-{
-    unsigned int count = 0;
-    DeviceNode* temp = head;
-    while (temp) {
-        count++;
-        temp = temp->_next;
-    }
-    return count;
+Devices DevicesList::get(unsigned int index) const {
+    return Devices();
 }
 
-// גישה למכשיר לפי אינדקס
-Devices& DeviceList::get(unsigned int index)
-{
-    DeviceNode* temp = head;
-    unsigned int count = 0;
-    while (temp) {
-        if (count == index) return temp->data;
-        count++;
-        temp = temp->_next;
-    }
-    throw std::out_of_range("Index out of range in DeviceList::get");
-}
+int DevicesList::size() const { return count; }
 
-// גישה למכשיר מתוך const
-const Devices& DeviceList::get(unsigned int index) const
-{
-    DeviceNode* temp = head;
-    unsigned int count = 0;
-    while (temp) {
-        if (count == index) return temp->data;
-        count++;
-        temp = temp->_next;
-    }
-    throw std::out_of_range("Index out of range in DeviceList::get const");
+void DevicesList::clear() {
+    // לפנות זיכרון אם הקצאתם מערך דינמי
 }
