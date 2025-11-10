@@ -123,19 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\hw2\קבצים נלווים\DeviceList.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\ProfileList.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\test1Device.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\test2User.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\test3Profile.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\Tester.cpp" />
-    <ClCompile Include="..\hw2\קבצים נלווים\UserList.cpp" />
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="DeviceList.cpp" />
+    <ClCompile Include="ProfileList.cpp" />
+    <ClCompile Include="test1Device.cpp" />
+    <ClCompile Include="test2User.cpp" />
+    <ClCompile Include="test3Profile.cpp" />
+    <ClCompile Include="Tester.cpp" />
+    <ClCompile Include="UserList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\hw2\קבצים נלווים\Device.h" />
-    <ClInclude Include="..\hw2\קבצים נלווים\DeviceList.h" />
-    <ClInclude Include="..\hw2\קבצים נלווים\ProfileList.h" />
-    <ClInclude Include="..\hw2\קבצים נלווים\UserList.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="DeviceList.h" />
+    <ClInclude Include="ProfileList.h" />
+    <ClInclude Include="UserList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
